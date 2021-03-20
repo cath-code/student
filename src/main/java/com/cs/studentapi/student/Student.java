@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Data
@@ -21,5 +24,27 @@ public class Student {
 
     @Column(name = "student_name")
     private String studentName;
+
+    @Column(name = "date_of_birth")
+    private LocalDate dateOfBirth;
+
+    @Column(name = "gender_type")
+    private GenderType genderType;
+
+    private String standard;
+
+    @Column(name = "preferred_lesson_length")
+    private Integer preferredLessonLength;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "preferred_day")
+    private DayOfWeek preferredDay;
+
+    @Column(name = "preferred_time")
+    private LocalTime preferredTime;
+
+    private Integer rate;
+
+    private String notes;
 }
 
